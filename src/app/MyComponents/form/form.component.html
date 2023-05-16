@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+   
+    
+</head>
+
+<body>
+    <div class="info">
+        <h1>Learn to code by</h1>
+        <h1>watching others</h1><br>
+        <h5>See how experinced developers solve problems in real-time. </h5>
+        <h5>Watching scripted tutorials is great,but  understanding how</h5>
+        <h5>developers think is invalauble.</h5>
+        </div>
+        <div class="sing">
+           
+   <h3><span class="bold">Try it free 7 days</span> <span class="bold1"> then $20/mo.thereafter</span></h3> 
+   <form  name="myform" onsubmit="return validateForm()">
+    <div class="bord">
+     <div class="formdesign" id="name">
+        <input type="text" name="fname" placeholder="First Name" required><div><b><span class="formerror"></span></b></div>
+     </div><br>
+
+     <div class="formdesign" id="lname">
+        <input type="text" name="flname"  placeholder="Last Name" required><div><b><span class="formerror"></span></b></div>
+    </div><br>
+
+
+     <div class="formdesign" id="email">
+        <input type="email" name="femail" placeholder="Email Address" required><div><b><span class="formerror"></span></b></div>
+    </div><br>
+
+     <div class="formdesign" id="pass">
+        <input type="password" name="fpass" placeholder="Password"required><div><b><span class="formerror"></span></b></div>
+    </div><br>
+
+     <input class="button" type="submit" value="CLAIM YOUR FREE TRIAL">
+     <h6><span class="bold3">By clicking the button, youare agreeaing to our </span><span class="bold4">Terms and Services</span></h6>
+    </div>
+   </form>
+   </div>
+</body>
+<script>
+    function clearErrors(){
+
+errors = document.getElementsByClassName('formerror');
+for(let item of errors)
+{
+    item.innerHTML = "";
+}
+
+
+}
+function seterror(id, error){
+//sets error inside tag of id 
+element = document.getElementById(id);
+element.getElementsByClassName('formerror')[0].innerHTML = error;
+
+}
+function validateForm(){
+    var returnval = true;
+    clearErrors();
+
+    
+
+        var name = document.forms['myform']["fname"].value;
+        if (name.length === 0) {
+            seterror("name", "First Name cannot be empty");
+            returnval = false;
+        }
+      
+
+       
+
+        var lname = document.forms['myform']["flname"].value;
+        if (name.length === 0) {
+            seterror("lname", "Last Name cannot be empty");
+            returnval = false;
+        }
+
+
+        
+        var lname = document.forms['myform']["femail"].value;
+        if (name.length === 0) {
+            seterror("email", "Look like this is not an email");
+            returnval = false;
+        }
+
+
+        
+        var lname = document.forms['myform']["fpass"].value;
+        if (name.length === 0) {
+            seterror("passw", "Password cannot be empty");
+            returnval = false;
+        }
+        return returnval;
+    
+
+    }
+</script>
+</html>
